@@ -8,7 +8,7 @@
           <div class="widget widget-about">
             <img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
             <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
-            </p>
+              dd </p>
 
             <div class="social-icons">
               <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
