@@ -98,12 +98,12 @@ global $lumise;
 		pageLinks.update();
 	});
 
-	$.get("http://localhost/lumise/page.php", function(data) {
+	$.get("https://zadevelopment.com.tr/page.php", function(data) {
 		data = JSON.parse(data);
 		page.setData(data.rows);
 	});
 
-	$.get("http://localhost/lumise/menu.php", function(data) {
+	$.get("https://zadevelopment.com.tr/menu.php", function(data) {
 		data = JSON.parse(data);
 		editor.setData(data.rows);
 	});
@@ -111,7 +111,7 @@ global $lumise;
 	$('.save-menu span').click(function() {
 		var str = editor.getString();
 		str = JSON.parse(str);
-		$.post("http://localhost/lumise/menu.php", {
+		$.post("https://zadevelopment.com.tr/menu.php", {
 			'set_menu': 1,
 			data: str
 		}, function(data) {
@@ -124,7 +124,7 @@ global $lumise;
 		var str = page.getString();
 		str = JSON.parse(str);
 		console.log(str);
-		$.post("http://localhost/lumise/page.php", {
+		$.post("https://zadevelopment.com.tr/page.php", {
 			'set_page': 1,
 			data: str
 		}, function(data) {
@@ -136,7 +136,7 @@ global $lumise;
 	$('.save-page-links span').click(function() {
 		var str = pageLinks.getString();
 		str = JSON.parse(str);
-		$.post("http://localhost/lumise/footer_menu.php", {
+		$.post("https://zadevelopment.com.tr/footer_menu.php", {
 			'set_page_id': 1,
 			data: str
 		}, function(data) {
@@ -149,7 +149,7 @@ global $lumise;
 
 	$('.page_search_button').click(function() {
 		$.ajax({
-			url: "http://localhost/lumise/footer_menu.php?get_pages=1&page_name=" + $('#page_name').val(),
+			url: "https://zadevelopment.com.tr/footer_menu.php?get_pages=1&page_name=" + $('#page_name').val(),
 			context: document.body
 		}).done(function(res) {
 			res = JSON.parse(res);
@@ -176,14 +176,14 @@ global $lumise;
 				$('.menu_text').val(res[order].text)
 				$('.menu_tooltip').val(res[order].text)
 				$('.menu_slug').val(res[order].href)
-				$('.menu_url').val('http://localhost/lumise/' + res[order].href)
+				$('.menu_url').val('https://zadevelopment.com.tr/' + res[order].href)
 			})
 		});
 	})
 
 	$('.category_search_button').click(function() {
 		$.ajax({
-			url: "http://localhost/lumise/menu.php?get_categories=1&category_name=" + $('#category_name').val(),
+			url: "https://zadevelopment.com.tr/menu.php?get_categories=1&category_name=" + $('#category_name').val(),
 			context: document.body
 		}).done(function(res) {
 			res = JSON.parse(res);
@@ -208,7 +208,7 @@ global $lumise;
 				var order = parseInt($(this).parent('div').parent('div').attr('data-order'));
 				$('.menu_text').val(res[order].name)
 				$('.menu_tooltip').val(res[order].name)
-				$('.menu_url').val('http://localhost/lumise/products.php?category_id=' + res[order].id)
+				$('.menu_url').val('https://zadevelopment.com.tr/products.php?category_id=' + res[order].id)
 			})
 		});
 	})
