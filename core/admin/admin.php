@@ -459,7 +459,7 @@ class lumise_admin extends lumise_lib
 					$data = $lumise->apply_filters('edit-section', $data, $name);
 					$id = $this->edit_row($data_id, $data, $name);
 					$nonDeleteItems = implode(',', $_POST['old']);
-					$lumise->db->rawQuery("DELETE FROM `{$lumise->db->prefix}product_images` WHERE `product_id`='{$id}' AND id NOT IN (" . $nonDeleteItems . ")");
+					$lumise->db->rawQuery("DELETE FROM `{$lumise->db->prefix}product_images` WHERE `product_id`='{$id}' AND id NOT IN ({$nonDeleteItems})");
 					if (isset($_FILES['photos'])) {
 						for ($i = 0; $i < count($_FILES['photos']['name']); $i++) {
 							$targetFile = $lumise->cfg->upload_path . 'thumbnails/' . basename($_FILES["photos"]["name"][$i]);

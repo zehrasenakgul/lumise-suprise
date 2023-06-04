@@ -19,5 +19,5 @@ $data = [
 $db = $lumise->get_db();
 $db->insert('comments', $data);
 
-header("Location: http://localhost/lumise/product.php?product_id=" . $productID);
+header("Location: https://zadevelopment.com.tr/product.php?product_id=" . $productID);
 exit();

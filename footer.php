@@ -48,7 +48,7 @@
           echo '<ul class="widget-list">';
 
           foreach ($rows as $row) {
-            echo '<li><a href="http://localhost/lumise/page.php?slug=' . $row['href'] . '">' . $row['title'] . '</a></li>';
+            echo '<li><a href="https://zadevelopment.com.tr/page.php?slug=' . $row['href'] . '">' . $row['title'] . '</a></li>';
           }
 
           echo '</ul>';

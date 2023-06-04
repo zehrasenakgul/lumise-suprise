@@ -41,8 +41,8 @@ class lumise_connector {
 			"load_jquery" => true,
 			"root_path" => dirname(__FILE__).DS.'core'.DS,
             
-            "upload_path" => 'C:\xampp\htdocs\data\\',
-			"upload_url" => 'http://localhost/data/',
+            "upload_path" => '/home/zadevelo/public_html/data/',
+			"upload_url" => 'https://zadevelopment.com.tr/data/',
             "admin_assets_url" => $url.'core/admin/assets/',
             "admin_url" => $url.'admin.php?',
             
@@ -700,7 +700,7 @@ class lumise_connector {
 			
 			$connector_content = str_replace(array(
 				'/home/zadevelo/public_html/data/',
-				'http://zadevelopment.com.tr/data/',
+				'https://zadevelopment.com.tr/data/',
 				'localhost',
                 'root',
                 '',
