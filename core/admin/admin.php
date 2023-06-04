@@ -51,6 +51,7 @@ class lumise_admin extends lumise_lib{
 	}
 
 	protected function process_save_data($field, $data) {
+		
 		if (isset($field['type']) && $field['type'] == 'trace')
 			return $data;
 			
@@ -203,9 +204,6 @@ class lumise_admin extends lumise_lib{
 		
 		return $data;
 
-	}
-
-	protected function process_multiple_images($field,$data){
 	}
 
 	protected function process_save_reference($args, $id) {
@@ -462,36 +460,9 @@ class lumise_admin extends lumise_lib{
 				if (!empty($data_id)) {
 					$data = $lumise->apply_filters('edit-section', $data, $name);
 					$id = $this->edit_row( $data_id, $data, $name );
-					$nonDeleteItems = implode(',',$_POST['old']);
-					$lumise->db->rawQuery("DELETE FROM `{$lumise->db->prefix}product_images` WHERE `product_id`='{$id}' AND id NOT IN (".$nonDeleteItems.")");
-					if(isset($_FILES['photos'])){
-						for($i = 0 ; $i < count($_FILES['photos']['name']); $i++){
-							$targetFile = $lumise->cfg->upload_path.'thumbnails/' . basename($_FILES["photos"]["name"][$i]);
-							$data = [
-								"image" => 'thumbnails/' . basename($_FILES["photos"]["name"][$i]),
-								"product_id" => $data_id
-							];
-							if (move_uploaded_file($_FILES["photos"]["tmp_name"][$i], $targetFile)) {
-								$this->add_row( $data, "product_images" );
-							}
-						}
-					}
 				} else {
 					$data = $lumise->apply_filters('new-section', $data, $name);
 					$id = $this->add_row( $data, $name );
-					if(isset($_FILES['photos'])){
-						for($i = 0 ; $i < count($_FILES['photos']['name']); $i++){
-							$targetFile = $lumise->cfg->upload_path.'thumbnails/' . basename($_FILES["photos"]["name"][$i]);
-							$data = [
-								"image" => 'thumbnails/' . basename($_FILES["photos"]["name"][$i]),
-								"product_id" => $data_id
-							];
-							if (move_uploaded_file($_FILES["photos"]["tmp_name"][$i], $targetFile)) {
-								 $this->add_row( $data, "product_images" );
-							}
-						}
-					}
-					
 				}
 				
 				$lumise->do_action('process-fields', $section, $id);

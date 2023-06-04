@@ -26,8 +26,6 @@ $lumise->do_action('admin-header');
 		<link rel="stylesheet" href="<?php echo $lumise->cfg->admin_assets_url;?>css/font-awesome.min.css?version=<?php echo LUMISE; ?>">
 		<link rel="stylesheet" href="<?php echo $lumise->cfg->admin_assets_url;?>css/admin.css?version=<?php echo LUMISE; ?>">
 		<link rel="stylesheet" href="<?php echo $lumise->cfg->admin_assets_url;?>css/responsive.css?version=<?php echo LUMISE; ?>">
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="<?php echo $lumise->cfg->admin_assets_url;?>css/image-uploader.css?version=<?php echo LUMISE; ?>">
 		<?php if (is_file($lumise->cfg->upload_path.'user_data'.DS.'custom.css')) { ?>
 		
 		

@@ -12,6 +12,7 @@
  */
 
 jQuery(document).ready(function($) {
+	
 	// Use strict for the private workspace
 
 	window.lumise = {
@@ -1757,6 +1758,7 @@ jQuery(document).ready(function($) {
 					
 					var canvas = document.createElement('canvas');
 						ctx = canvas.getContext('2d'),
+						
 					canvas.width = (ops.width*2);
 					canvas.height = (ops.height*2);
 					
@@ -14559,10 +14561,6 @@ jQuery(document).ready(function($) {
 					
 					e.preventDefault();
 				});
-
-				$('.next_page_editor').click(function(e){
-					lumise.cart.next_stage('button add next stage');
-				})
 				
 				if (top.location !== window.location) {
 					$('#back-btn a').on('click', function(e) {
@@ -14572,56 +14570,6 @@ jQuery(document).ready(function($) {
 				};
 
 				lumise.render.cart_change();
-				
-			},
-
-			next_stage : function(e) {
-				
-				
-				var cart_design			= lumise.fn.export('cart'),
-					start_render 		= 0,
-					current_stage		= lumise.current_stage,
-					first_stage 		= Object.keys(lumise.data.stages)[start_render],
-					export_print_file 	= function(s) {
-						
-						start_render++;
-						
-						lumise.active_stage(s, function() {
-							
-							$('#LumiseDesign').attr({
-								'data-processing': 'true',
-								'data-msg': lumise.i('render')
-							});
-								
-							lumise.get.el('zoom').val('100').trigger('input');
-							
-							lumise.fn.uncache_large_images(function() {
-									
-								let psize = lumise.get.size();
-								
-								lumise.f(false);
-								
-								lumise.fn.download_design({
-									type: 'png',
-									orien: psize.o,
-									height: psize.h,
-									width: psize.w,
-									include_base: false,
-									with_base: lumise.data.stages[s].include_base,
-									callback: function(data) {
-										console.log($('.content-editor-right img'));
-										$('.content-editor-right img').attr('src',data);
-										$('.editor-next-page').css('display','block')
-									}	
-								});
-							
-							}); /* End uncache */
-							
-						});
-							
-					};
-				
-				export_print_file(first_stage);
 				
 			},
 			
@@ -14833,6 +14781,7 @@ jQuery(document).ready(function($) {
 				$('#LumiseDesign').attr({'data-processing': 'true', 'data-msg': 'Preparing cart data'});
 				
 				export_print_file(first_stage);
+				
 				if (e !== undefined && typeof e.preventDefault == 'function')
 					e.preventDefault();
 				

@@ -46,13 +46,6 @@
 				)
 				,
 				array(
-					'type' => 'multiple_images',
-					'path' => 'thumbnails'.DS,
-					'thumbn' => 'thumbnail_url',
-					'name' => 'product_images',
-					'label' => $lumise->lang('Product Images')
-				),
-				array(
 					'type' => 'text',
 					'name' => 'description',
 					'label' => $lumise->lang('Description')

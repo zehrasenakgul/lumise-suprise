@@ -54,7 +54,6 @@ $lumise->do_action('editor-header');
 						<i>0+</i>
 					</div>
 				</div>
-				<div class="next_page_editor"><i class="lumise-icon-arrow-right"></i></div>
 				<div id="lumise-zoom-wrp">
 					<i class="lumisex-android-remove" data-zoom="out"></i>
 					<span><?php echo $lumise->lang('Scroll to zoom'); ?></span>
@@ -70,26 +69,6 @@ $lumise->do_action('editor-header');
 					<ul></ul>
 				</div>
 				<div id="lumise-notices"></div>
-			</div>
-		</div>
-	</div>
-	<div class="editor-next-page">
-		<div class="editor-next-page-content">
-			<div class="left">
-				<ul>
-					<li class="back"><i class="lumise-icon-arrow-left"></i></li>
-					<li class="back"><i class="lumise-icon-cloud-upload"></i></li>
-				</ul>
-			</div>
-			<div class="center">
-				<div class="center-area">
-					<img alt="high five" src="https://assets.yoursurprise.com/images/editor/order_preview/high_five_gray.gif">
-					<h2>Wow, sieht echt super aus!</h2>
-					<span>Wir fertigen dein Geschenk genau so an, wie du es online gestaltet hast. Willst du doch noch etwas ändern? Klick dann auf "Ändern".</span>
-				</div>
-			</div>
-			<div class="content-editor-right">
-				<img src="" alt="">
 			</div>
 		</div>
 	</div>
